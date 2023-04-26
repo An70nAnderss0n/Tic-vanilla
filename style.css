@@ -14,6 +14,7 @@ body {
 }
 
 body {
+  padding: 90px 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,6 +31,7 @@ body {
   color: #bf9460;
   grid-column-start: 1;
   grid-column-end: 3;
+  align-self: center;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -56,7 +58,7 @@ body {
   }
 }
 .grid .turn p {
-  font-size: 14px;
+  font-size: 1rem;
   animation: 0.6s ease-in-out turn-text-animation;
 }
 .grid .turn i {
@@ -66,9 +68,31 @@ body {
 }
 .grid .square {
   background-color: #d9bc66;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+.grid .square:hover {
+  cursor: pointer;
+  opacity: 90%;
 }
 .grid .score {
   background-color: #3f3d40;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.grid .score p {
+  text-align: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+.grid .score span {
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 .grid .actions {
   background-color: salmon;
