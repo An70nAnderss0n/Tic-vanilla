@@ -27,9 +27,42 @@ body {
   gap: 5px;
 }
 .grid .turn {
-  background-color: #bf9460;
+  color: #bf9460;
   grid-column-start: 1;
   grid-column-end: 3;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@keyframes turn-text-animation {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+@keyframes turn-icon-animation {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.grid .turn p {
+  font-size: 14px;
+  animation: 0.6s ease-in-out turn-text-animation;
+}
+.grid .turn i {
+  font-size: 1.8rem;
+  margin-left: 10px;
+  animation: 0.6s ease-in-out turn-icon-animation;
 }
 .grid .square {
   background-color: #d9bc66;
@@ -39,4 +72,74 @@ body {
 }
 .grid .actions {
   background-color: salmon;
+}
+
+/* Menu styles */
+.menu {
+  position: relative;
+}
+.menu .menu-btn {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  color: white;
+  background-color: #3f3d40;
+  border: 1px solid transparent;
+}
+.menu .items {
+  position: absolute;
+  z-index: 10;
+  top: 60px;
+  right: 0;
+  background-color: #3f3d40;
+  border-radius: 2px;
+  padding: 10px;
+}
+.menu .items button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.menu .items button {
+  background-color: transparent;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: 40px repeat(3, 100px) 50px;
+    gap: 20px;
+  }
+}
+footer {
+  color: white;
+  margin-top: 50px;
+}
+footer p {
+  margin-top: 10px;
+  text-align: center;
+}
+footer a {
+  color: #bf9460;
+}
+
+/* Shared utility classes */
+button:hover {
+  cursor: pointer;
+  opacity: 90%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.border {
+  border: 1px solid rgba(211, 211, 211, 0.4) !important;
 }/*# sourceMappingURL=style.css.map */
