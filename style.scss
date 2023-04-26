@@ -46,3 +46,23 @@ body {
     background-color: salmon;
   }
 }
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: 40px repeat(3, 100px) 50px;
+    gap: 20px;
+  }
+}
+
+footer {
+  color: white;
+  margin-top: 50px;
+  p {
+    margin-top: 10px;
+    text-align: center;
+  }
+  a {
+    color: $text-color;
+  }
+}
