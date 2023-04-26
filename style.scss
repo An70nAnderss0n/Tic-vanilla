@@ -1,0 +1,48 @@
+$base-color: #0d0d0d;
+$text-color: #bf9460;
+$x-color: #a68a56;
+$o-color: #d9bc66;
+$second-color: #3f3d40;
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: $base-color;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: 50px repeat(3, 80px) 60px;
+  gap: 5px;
+  .turn {
+    background-color: $text-color;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .square {
+    background-color: $o-color;
+  }
+  .score {
+    background-color: $second-color;
+  }
+  .actions {
+    background-color: salmon;
+  }
+}

@@ -1,0 +1,42 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #0d0d0d;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: 50px repeat(3, 80px) 60px;
+  gap: 5px;
+}
+.grid .turn {
+  background-color: #bf9460;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.grid .square {
+  background-color: #d9bc66;
+}
+.grid .score {
+  background-color: #3f3d40;
+}
+.grid .actions {
+  background-color: salmon;
+}/*# sourceMappingURL=style.css.map */
