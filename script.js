@@ -11,7 +11,15 @@ const App = {
   },
 
   init() {
+    App.registerEventListners()
 
+  },
+
+  state: {
+    currentPlayer: 1,
+  },
+
+  registerEventListners() {
     console.log(App.$.squares);
 
     App.$.menu.addEventListener('click', (event) => {
@@ -24,13 +32,37 @@ const App = {
 
     App.$.newRoundBtn.addEventListener('click', event => {
       console.log('Add a new round');
-    })
+    });
+
+    //TODO
     App.$.squares.forEach(square => {
       square.addEventListener('click', event => {
         console.log(`Square with id: ${event.target.id}`);
+        console.log(`The current player is ${App.state.currentPlayer}`);
+
+        const currentPlayer = App.state.currentPlayer;
+
+        const icon = document.createElement('i');
+
+        if (currentPlayer === 1) {
+          icon.classList.add('fa-solid', 'fa-x')
+        } else {
+          icon.classList.add('fa-solid', 'fa-o', 'circle-color')
+        }
+
+        App.state.currentPlayer = App.state.currentPlayer === 1 ? 2 : 1;
+
+
+
+        event.target.replaceChildren(icon)
+
+
+        // <i class="fa-solid fa-x"></i>
+        // <i class="fa-solid fa-o"></i>
       })
-    })
+    });
   }
+
 }
 
 window.addEventListener('load', App.init)

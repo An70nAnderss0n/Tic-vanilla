@@ -77,6 +77,7 @@ body {
       animation: 0.6s ease-in-out turn-icon-animation;
     }
   }
+
   .square {
     background-color: $o-color;
     border-radius: 10px;
@@ -84,6 +85,10 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 3rem;
+
+    .circle-color {
+      color: white;
+    }
   }
   .square:hover {
     cursor: pointer;
@@ -106,8 +111,20 @@ body {
       font-size: 11px;
     }
   }
-  .actions {
-    background-color: salmon;
+  .playerOne {
+    background-color: $text-color;
+  }
+  .tie {
+    background-color: $base-color;
+    p {
+      color: white;
+    }
+    span {
+      color: white;
+    }
+  }
+  .playerTwo {
+    background-color: $x-color;
   }
 }
 

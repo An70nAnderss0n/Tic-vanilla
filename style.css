@@ -74,6 +74,9 @@ body {
   align-items: center;
   font-size: 3rem;
 }
+.grid .square .circle-color {
+  color: white;
+}
 .grid .square:hover {
   cursor: pointer;
   opacity: 90%;
@@ -94,8 +97,20 @@ body {
 .grid .score span {
   font-size: 11px;
 }
-.grid .actions {
-  background-color: salmon;
+.grid .playerOne {
+  background-color: #bf9460;
+}
+.grid .tie {
+  background-color: #0d0d0d;
+}
+.grid .tie p {
+  color: white;
+}
+.grid .tie span {
+  color: white;
+}
+.grid .playerTwo {
+  background-color: #a68a56;
 }
 
 /* Menu styles */
