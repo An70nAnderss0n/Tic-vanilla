@@ -157,6 +157,7 @@ footer {
   color: white;
   margin-top: 50px;
   p {
+    font-size: 0.8rem;
     margin-top: 10px;
     text-align: center;
   }
@@ -184,4 +185,37 @@ button:hover {
 
 .border {
   border: 1px solid rgba(211, 211, 211, 0.4) !important;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-contents {
+  /* transform: translateY(-80px); */
+  height: 150px;
+  width: 100%;
+  max-width: 300px;
+  background-color: $second-color;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  margin: 10px;
+}
+
+.modal-contents button {
+  padding: 10px;
+  background-color: $base-color;
+  color: white;
+  border-radius: 3px;
 }
