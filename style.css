@@ -112,6 +112,7 @@ body {
   color: white;
   background-color: #3f3d40;
   border: 1px solid transparent;
+  font-size: 0.8rem;
 }
 .menu .items {
   position: absolute;
@@ -121,6 +122,10 @@ body {
   background-color: #3f3d40;
   border-radius: 2px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
 }
 .menu .items button:hover {
   cursor: pointer;
@@ -129,6 +134,7 @@ body {
 .menu .items button {
   background-color: transparent;
   color: white;
+  font-size: 0.8rem;
 }
 
 @media (min-width: 768px) {

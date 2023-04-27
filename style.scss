@@ -124,6 +124,7 @@ body {
     color: white;
     background-color: $second-color;
     border: 1px solid transparent;
+    font-size: 0.8rem;
   }
 
   .items {
@@ -134,6 +135,10 @@ body {
     background-color: $second-color;
     border-radius: 2px;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
     button:hover {
       cursor: pointer;
       text-decoration: underline;
@@ -141,6 +146,7 @@ body {
     button {
       background-color: transparent;
       color: white;
+      font-size: 0.8rem;
     }
   }
 }
