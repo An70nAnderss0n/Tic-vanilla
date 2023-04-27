@@ -81,18 +81,18 @@ body {
 .grid .score {
   background-color: #3f3d40;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
 }
 .grid .score p {
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 11px;
   font-weight: 600;
 }
 .grid .score span {
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 11px;
 }
 .grid .actions {
   background-color: salmon;
