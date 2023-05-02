@@ -7,7 +7,10 @@ const App = {
     menuItems: document.querySelector('[data-id="menu-items"]'),
     resetBtn: document.querySelector('[data-id="reset-btn"]'),
     newRoundBtn: document.querySelector('[data-id="new-round-btn"]'),
-    squares: document.querySelectorAll('[data-id="square"]')
+    squares: document.querySelectorAll('[data-id="square"]'),
+    modal: document.querySelector('[data-id="modal"]'),
+    modalText: document.querySelector('[data-id="modal-text"]'),
+    modalBtn: document.querySelector('[data-id="modal-btn"]')
   },
 
   init() {
@@ -73,6 +76,14 @@ const App = {
       console.log('Add a new round');
     });
 
+    App.$.modalBtn.addEventListener("click", event => {
+      App.state.moves = [];
+      App.$.squares.forEach((square) => {
+        square.replaceChildren()
+      })
+      App.$.modal.classList.add('hidden');
+    })
+
     //TODO
     App.$.squares.forEach(square => {
       square.addEventListener('click', event => {
@@ -118,17 +129,22 @@ const App = {
         const game = App.getGamestatus(App.state.moves);
 
         if (game.status === 'complete') {
+
+          App.$.modal.classList.remove("hidden");
+
+          let message = "";
+
           if (game.winner) {
-            alert(`Player ${game.winner} wins`)
+            message = `Player ${game.winner} wins!`
           } else {
-            alert(`The game ended with a tie.`)
+            message = `The game ended in a tie.`
           }
+
+          App.$.modalText.textContent = message;
         }
-
-      })
+      });
     });
-  }
-
+  },
 }
 
 window.addEventListener('load', App.init)
