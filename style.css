@@ -10,7 +10,7 @@
 html,
 body {
   height: 100%;
-  background-color: #0d0d0d;
+  background-color: #042940;
 }
 
 body {
@@ -21,6 +21,14 @@ body {
   align-items: center;
 }
 
+.circle-color {
+  color: #dbf227;
+}
+
+.x-color {
+  color: #d6d58e;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 80px);
@@ -28,7 +36,7 @@ body {
   gap: 5px;
 }
 .grid .turn {
-  color: #bf9460;
+  color: #dbf227;
   grid-column-start: 1;
   grid-column-end: 3;
   align-self: center;
@@ -67,22 +75,19 @@ body {
   animation: 0.6s ease-in-out turn-icon-animation;
 }
 .grid .square {
-  background-color: #d9bc66;
+  background-color: #005c53;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
 }
-.grid .square .circle-color {
-  color: white;
-}
 .grid .square:hover {
   cursor: pointer;
   opacity: 90%;
 }
 .grid .score {
-  background-color: #3f3d40;
+  background-color: #9fc131;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,10 +103,10 @@ body {
   font-size: 11px;
 }
 .grid .playerOne {
-  background-color: #bf9460;
+  background-color: #dbf227;
 }
 .grid .tie {
-  background-color: #0d0d0d;
+  background-color: #042940;
 }
 .grid .tie p {
   color: white;
@@ -110,7 +115,7 @@ body {
   color: white;
 }
 .grid .playerTwo {
-  background-color: #a68a56;
+  background-color: #d6d58e;
 }
 
 /* Menu styles */
@@ -125,7 +130,7 @@ body {
   align-items: center;
   border-radius: 10px;
   color: white;
-  background-color: #3f3d40;
+  background-color: #9fc131;
   border: 1px solid transparent;
   font-size: 0.8rem;
 }
@@ -134,7 +139,7 @@ body {
   z-index: 10;
   top: 60px;
   right: 0;
-  background-color: #3f3d40;
+  background-color: #9fc131;
   border-radius: 2px;
   padding: 10px;
   display: flex;
@@ -169,7 +174,7 @@ footer p {
   text-align: center;
 }
 footer a {
-  color: #bf9460;
+  color: #dbf227;
 }
 
 /* Shared utility classes */
@@ -205,7 +210,7 @@ button:hover {
   height: 150px;
   width: 100%;
   max-width: 300px;
-  background-color: #3f3d40;
+  background-color: #9fc131;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -218,7 +223,7 @@ button:hover {
 
 .modal-contents button {
   padding: 10px;
-  background-color: #0d0d0d;
+  background-color: #042940;
   color: white;
   border-radius: 3px;
 }/*# sourceMappingURL=style.css.map */

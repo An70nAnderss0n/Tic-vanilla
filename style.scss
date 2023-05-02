@@ -1,8 +1,8 @@
-$base-color: #0d0d0d;
-$text-color: #bf9460;
-$x-color: #a68a56;
-$o-color: #d9bc66;
-$second-color: #3f3d40;
+$base-color: #042940;
+$text-color: #dbf227;
+$x-color: #d6d58e;
+$o-color: #005c53;
+$second-color: #9fc131;
 
 * {
   padding: 0px;
@@ -25,6 +25,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.circle-color {
+  color: #dbf227;
+}
+.x-color {
+  color: #d6d58e;
 }
 
 .grid {
@@ -85,10 +92,6 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-
-    .circle-color {
-      color: white;
-    }
   }
   .square:hover {
     cursor: pointer;
