@@ -18,7 +18,9 @@ export default class View {
     this.$.modalText = this.#qs('[data-id="modal-text"]');
     this.$.modalBtn = this.#qs('[data-id="modal-btn"]');
     this.$.turn = this.#qs('[data-id="turn"]');
-
+    this.$.p1Wins = this.#qs('[data-id="p1-wins"]');
+    this.$.p2Wins = this.#qs('[data-id="p2-wins"]');
+    this.$.ties = this.#qs('[data-id="ties"]')
 
     this.$$.squares = this.#qsAll('[data-id="square"]');
 
@@ -35,6 +37,8 @@ export default class View {
 
   bindGameResetEvent(handler) {
     this.$.resetBtn.addEventListener('click', handler)
+
+    this.$.modalBtn.addEventListener('click', handler)
   }
 
   bindNewRoundEvent(handler) {
@@ -51,14 +55,62 @@ export default class View {
   * DOM helper methods
   */
 
+  updateScoreBoard(p1Wins, p2Wins, ties) {
+    this.$.p1Wins.innerText = `${p1Wins} wins`;
+    this.$.p2Wins.innerText = `${p2Wins} wins`;
+    this.$.ties.innerText = `${ties} ties`;
+
+  }
+  openModal(message) {
+    this.$.modal.classList.remove('hidden');
+    this.$.modalText.innerText = message;
+  }
+
+
+
+  closeAll() {
+    this.#closeModal();
+    this.#closeMenu();
+  }
+
+
+  clearMoves() {
+    this.$$.squares.forEach(square => {
+      square.replaceChildren()
+    })
+  }
+
+  initializeMoves(moves) {
+    this.$$.squares.forEach(square => {
+      const existingMove = moves.find(move => move.squareId === +square.id)
+
+      if (existingMove) {
+        this.handlePlayerMove(square, existingMove.player)
+      }
+    })
+  }
+
+
+  #closeModal() {
+    this.$.modal.classList.add('hidden')
+  }
+
+
+  #closeMenu() {
+    this.$.menuItems.classList.add('hidden');
+    this.$.menuBtn.classList.remove('border');
+
+
+    const icon = this.$.menuBtn.querySelector('i')
+
+    icon.classList.add('fa-chevron-down')
+    icon.classList.remove('fa-chevron-up')
+  }
+
   #toggleMenu() {
     this.$.menuItems.classList.toggle('hidden');
     this.$.menuBtn.classList.toggle('border')
 
-    const icon = this.$.menuBtn.querySelector('i')
-
-    icon.classList.toggle('fa-chevron-down')
-    icon.classList.toggle('fa-chevron-up')
   }
 
   handlePlayerMove(squareEl, player) {
@@ -66,6 +118,7 @@ export default class View {
     icon.classList.add('fa-solid', player.colorClass, player.iconClass);
     squareEl.replaceChildren(icon);
   }
+
 
   // player = 1 | 2
   setTurnIndicator(player) {
