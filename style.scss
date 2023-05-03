@@ -41,7 +41,6 @@ body {
   gap: 5px;
 
   .turn {
-    color: $text-color;
     grid-column-start: 1;
     grid-column-end: 3;
     align-self: center;
@@ -211,7 +210,7 @@ button:hover {
 }
 
 .border {
-  border: 1px solid rgba(211, 211, 211, 0.4) !important;
+  border: 1px solid white !important;
 }
 
 .modal {
